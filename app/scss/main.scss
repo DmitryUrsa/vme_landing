@@ -103,6 +103,9 @@ b, strong {
 .main-menu {
 	display: inline-block;
 	margin: 20px auto auto 95px;
+	&.active {
+		display: block!important;
+	}
 	&__item {
 		color: #fff;
 		font-size: 18px;
@@ -117,6 +120,10 @@ b, strong {
 			margin-right: 25px;
 		}
 	}
+}
+
+.mobile-button {
+	display: none;
 }
 
 .main-cta {
@@ -288,6 +295,7 @@ b, strong {
 
 .price-cards {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
@@ -377,5 +385,69 @@ body input[type="text"], body textarea {
 	background-color: $yellow;
 	font-size: 18px;
 }
+
+.hamburger.is-active{
+  -webkit-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  -webkit-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.hamburger.is-active .line {
+	background-color: #fff;
+	box-shadow: 0 0 14px $accent;
+	background-color: $yellow;
+}
+
+.hamburger.is-active .line:nth-child(2){
+  width: 0px;
+}
+
+.hamburger.is-active .line:nth-child(1),
+.hamburger.is-active .line:nth-child(3){
+  -webkit-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.hamburger.is-active .line:nth-child(1){
+  -webkit-transform: translateY(13px);
+  -ms-transform: translateY(13px);
+  -o-transform: translateY(13px);
+  transform: translateY(13px);
+}
+
+.hamburger.is-active .line:nth-child(3){
+  -webkit-transform: translateY(-13px) rotate(90deg);
+  -ms-transform: translateY(-13px) rotate(90deg);
+  -o-transform: translateY(-13px) rotate(90deg);
+  transform: translateY(-13px) rotate(90deg);
+}
+
+.hamburger .line{
+  width: 50px;
+  height: 5px;
+  background-color: #ecf0f1;
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.hamburger:hover{
+  cursor: pointer;
+}
+
+.hamburger {
+	display: inline-block;
+}
+
 
 @import "media"; // Always at the end

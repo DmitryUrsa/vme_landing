@@ -1,5 +1,8 @@
 $(function() {
 
-	// Custom JS
+	$(".hamburger").click(function(){
+    $(this).toggleClass("is-active");
+    $('.main-menu').toggleClass("active");
+  });
 
 });
